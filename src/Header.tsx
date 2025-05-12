@@ -35,7 +35,7 @@ export const Header = () => {
               <img
                 src="/logo.png"
                 alt="Logo"
-                style={{ width: "2.5rem", height: "auto", marginLeft: "4rem" }}
+                style={{ width: "4.5rem", height: "auto", marginLeft: "4rem" }}
               />
             </Box>
 
@@ -68,7 +68,7 @@ export const Header = () => {
               <img src="/logo.png" alt="Logo" width="40%" />
               <IconButton
                 sx={{
-                  marginLeft: "5%",
+                  marginLeft: "1%",
                 }}
               >
                 <CloseIcon
