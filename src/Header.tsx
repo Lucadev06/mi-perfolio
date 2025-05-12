@@ -67,10 +67,10 @@ export const Header = () => {
                                 marginTop: "0.5rem",
                             }}
                         >
-                            <img src="../public/logo.png" alt="Logo" width="50%" />
+                            <img src="../public/logo.png" alt="Logo" width="40%" />
                             <IconButton
                                 sx={{
-                                    marginLeft: "40%"
+                                    marginLeft: "8%"
                                 }}
                             >
                                 <CloseIcon sx={{ color: "white" }} onClick={() => setIsDrawerOpen(false)} />
