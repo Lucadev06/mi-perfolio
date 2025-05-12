@@ -38,7 +38,7 @@ export const Header = () => {
     >
       {/* Logo alineado con el menú */}
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        <img src="../public/logo.png" alt="Logo" style={{ width: "2.5rem", height: "auto" }} />
+        <img src="/logo.png" alt="Logo" style={{ width: "2.5rem", height: "auto" }} />
       </Box>
 
       {/* Botón hamburguesa */}
@@ -67,7 +67,7 @@ export const Header = () => {
                                 marginTop: "0.5rem",
                             }}
                         >
-                            <img src="../public/logo.png" alt="Logo" width="40%" />
+                            <img src="/logo.png" alt="Logo" width="40%" />
                             <IconButton
                                 sx={{
                                     marginLeft: "8%"
@@ -112,7 +112,7 @@ export const Header = () => {
                         backgroundColor: "black",
                     }}
                 >
-                    <img src="../public/logo.png" alt="Logo" width="5%" />
+                    <img src="/logo.png" alt="Logo" width="5%" />
 
                     <Box sx={{ marginLeft: "40%" }}>
                         <Button
