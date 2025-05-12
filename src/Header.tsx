@@ -2,7 +2,7 @@ import { Box, Button, Drawer, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
-import "./App.css";
+
 import { useMediaQuery } from '@mui/material';
 import { useState } from "react";
 
