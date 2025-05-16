@@ -23,10 +23,11 @@ export const Header = () => {
         <>
           <Box
             sx={{
+              width: "100%",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              padding: "0.5rem 1rem",
+              
               backgroundColor: "black",
             }}
           >
