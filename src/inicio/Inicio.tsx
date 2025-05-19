@@ -19,9 +19,10 @@ export const Inicio = () => {
                 boxSizing: "border-box",
                 position: "relative",
                 overflow: "hidden",
+                marginTop: isDesktop ? "2rem" : "0",
             }}
         >
-
+            
             <Box
                 sx={{
                     position: "absolute",
@@ -52,31 +53,79 @@ export const Inicio = () => {
                     width: "45%",
                     aspectRatio: "5 / 6",
                     minWidth: "280px",
-                    position: "relative",
-                    backgroundColor: "#fff3db",
-                    clipPath:
-                        "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 100% 100%, 30% 100%, 0% 70%, 0% 30%)",
-                    overflow: "hidden",
-                    boxShadow: "0 12px 36px rgba(0,0,0,0.15)",
+                    perspective: "1000px",
                     zIndex: 1,
-                    "&:hover img": {
-                        transform: "scale(1.05)",
+                    "&:hover .flip-inner": {
+                        transform: "rotateY(180deg)",
                     },
                 }}
             >
-                <img
-                    src="/IMG_30091.png"
-                    alt="Luca"
-                    style={{
+                <Box
+                    className="flip-inner"
+                    sx={{
                         width: "100%",
                         height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "center top",
-                        transition: "transform 0.3s ease",
+                        position: "relative",
+                        transformStyle: "preserve-3d",
+                        transition: "transform 0.8s ease",
                     }}
-                />
-            </Box>
+                >
+                    
+                    <Box
+                        sx={{
+                            position: "absolute",
+                            width: "100%",
+                            height: "100%",
+                            backfaceVisibility: "hidden",
+                             clipPath:
+                       "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 100% 100%, 17% 100%, 0% 70%, 0% 30%)",
+                            backgroundColor: "#fff3db",
+                            boxShadow: "0 12px 36px rgba(0,0,0,0.15)",
+                            zIndex: 2,
+                        }}
+                    >
+                        <img
+                            src="/IMG_3009.png"
+                            alt="Luca"
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover",
+                                objectPosition: "center top",
+                                borderRadius: 0, 
+                            }}
+                        />
+                    </Box>
 
+                    
+                    <Box
+                        sx={{
+                            position: "absolute",
+                            width: "100%",
+                            height: "100%",
+                            transform: "rotateY(180deg)",
+                            backfaceVisibility: "hidden",
+                               clipPath:
+                        "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 100% 100%, 30% 100%, 0% 70%, 0% 30%)",
+                            backgroundColor: "#fff3db",
+                            boxShadow: "0 12px 36px rgba(0,0,0,0.15)",
+                            zIndex: 1,
+                        }}
+                    >
+                        <img
+                            src="/imagen-animada.png"
+                            alt="Luca animado"
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover",
+                                objectPosition: "center top",
+                                borderRadius: 0,
+                            }}
+                        />
+                    </Box>
+                </Box>
+            </Box>
 
             <Box
                 sx={{
@@ -101,7 +150,6 @@ export const Inicio = () => {
                     ¡Hola! Soy Luca
                 </Typography>
 
-
                 <Typography sx={{ color: "#444", mb: 3, fontSize: "1.2rem" }}>
                     Desarrollador Frontend enfocado en crear experiencias modernas y funcionales. Me especializo en React, MUI y el diseño limpio con impacto visual.
                 </Typography>
@@ -114,7 +162,6 @@ export const Inicio = () => {
                         mt: 2,
                     }}
                 >
-
                     <Button
                         variant="contained"
                         sx={{
