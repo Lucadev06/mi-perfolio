@@ -7,7 +7,6 @@ import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
 
 export const Header = () => {
-  // Cambia el valor de isMobile según el tamaño de pantalla que desees considerar como móvil
   const isMobile = useMediaQuery("(max-width:760px)");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -27,11 +26,13 @@ export const Header = () => {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              
+              padding: "0",
+              marginBottom: "-10px",
+              boxSizing: "border-box",
               backgroundColor: "black",
             }}
           >
-            {/* Logo alineado con el menú */}
+
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <img
                 src="/logo.png"
@@ -40,7 +41,7 @@ export const Header = () => {
               />
             </Box>
 
-            {/* Botón hamburguesa */}
+
             <IconButton onClick={() => setIsDrawerOpen(true)}>
               <MenuIcon sx={{ color: "white" }} />
             </IconButton>
@@ -132,6 +133,10 @@ export const Header = () => {
             justifyContent: "center",
             alignItems: "center",
             backgroundColor: "black",
+            boxSizing: "border-box",
+            position: "relative",
+            bottom: "-7px",
+            height: "3rem" 
           }}
         >
           <img src="/logo.png" alt="Logo" width="5%" />
