@@ -5,7 +5,6 @@ export const Inicio = () => {
     const isDesktop = useMediaQuery("(min-width:960px)");
     const navigate = useNavigate();
     const redirectToContact = () => {
-        
         navigate("/contacto");
     };
    

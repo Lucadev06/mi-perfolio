@@ -6,6 +6,7 @@ import { SobreMi } from "./sobre-mi/SobreMi";
 import { Skills } from "./skills/Skilss";
 import { Experiencia } from "./experiencia/Experiencia";
 import { Contacto } from "./contacto/Contacto";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route path="/experiencia" element={<Experiencia />} />
         <Route path="/contacto" element={<Contacto />} />
       </Routes>
+      {/* Footer siempre visible */}
+      <Footer />
     </BrowserRouter>
   );
 }
