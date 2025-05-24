@@ -1,4 +1,4 @@
-import { Box, Button, Drawer, IconButton } from "@mui/material";
+import { Box, Button, Drawer, IconButton, Tooltip } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
@@ -32,15 +32,19 @@ export const Header = () => {
               backgroundColor: "black",
             }}
           >
-
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              <img
-                src="/logo.png"
-                alt="Logo"
-                style={{ width: "4.5rem", height: "auto", marginLeft: "4rem" }}
-              />
+              <Tooltip title="Luca Simonazzi">
+                <img
+                  src="/logo.png"
+                  alt="Logo"
+                  style={{
+                    width: "4.5rem",
+                    height: "auto",
+                    marginLeft: "4rem",
+                  }}
+                />
+              </Tooltip>
             </Box>
-
 
             <IconButton onClick={() => setIsDrawerOpen(true)}>
               <MenuIcon sx={{ color: "white" }} />
@@ -130,16 +134,21 @@ export const Header = () => {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "space-between",
             alignItems: "center",
             backgroundColor: "black",
             boxSizing: "border-box",
-            position: "relative",
-            bottom: "-7px",
-            height: "3rem" 
+            padding: "0 4rem",
+            height: "3rem",
           }}
         >
-          <img src="/logo.png" alt="Logo" width="5%" />
+          <Tooltip title="Luca Simonazzi">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              style={{ height: "3.5rem", cursor: "pointer" }}
+            />
+          </Tooltip>
 
           <Box sx={{ marginLeft: "40%" }}>
             <Button

@@ -1,8 +1,14 @@
 import { Box, Button, Typography, useMediaQuery } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export const Inicio = () => {
     const isDesktop = useMediaQuery("(min-width:960px)");
-
+    const navigate = useNavigate();
+    const redirectToContact = () => {
+        
+        navigate("/contacto");
+    };
+   
     return (
         <Box
             sx={{
@@ -22,7 +28,7 @@ export const Inicio = () => {
                 marginTop: isDesktop ? "2rem" : "0",
             }}
         >
-            
+
             <Box
                 sx={{
                     position: "absolute",
@@ -70,15 +76,15 @@ export const Inicio = () => {
                         transition: "transform 0.8s ease",
                     }}
                 >
-                    
+
                     <Box
                         sx={{
                             position: "absolute",
                             width: "100%",
                             height: "100%",
                             backfaceVisibility: "hidden",
-                             clipPath:
-                       "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 100% 100%, 17% 100%, 0% 70%, 0% 30%)",
+                            clipPath:
+                                "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 100% 100%, 17% 100%, 0% 70%, 0% 30%)",
                             backgroundColor: "#fff3db",
                             boxShadow: "0 12px 36px rgba(0,0,0,0.15)",
                             zIndex: 2,
@@ -92,12 +98,12 @@ export const Inicio = () => {
                                 height: "100%",
                                 objectFit: "cover",
                                 objectPosition: "center top",
-                                borderRadius: 0, 
+                                borderRadius: 0,
                             }}
                         />
                     </Box>
 
-                    
+
                     <Box
                         sx={{
                             position: "absolute",
@@ -105,8 +111,8 @@ export const Inicio = () => {
                             height: "100%",
                             transform: "rotateY(180deg)",
                             backfaceVisibility: "hidden",
-                               clipPath:
-                        "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 100% 100%, 30% 100%, 0% 70%, 0% 30%)",
+                            clipPath:
+                                "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 100% 100%, 30% 100%, 0% 70%, 0% 30%)",
                             backgroundColor: "#fff3db",
                             boxShadow: "0 12px 36px rgba(0,0,0,0.15)",
                             zIndex: 1,
@@ -175,6 +181,7 @@ export const Inicio = () => {
                                 backgroundColor: "#e5a020",
                             },
                         }}
+                        onClick={redirectToContact}
                     >
                         Contactame
                     </Button>
