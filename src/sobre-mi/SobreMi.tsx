@@ -13,7 +13,7 @@ export const SobreMi = () => {
   return (
     <Box
       sx={{
-        width: '100%',
+        width: '80%',
         maxWidth: '1000px',
         mx: 'auto',
         px: 2,
