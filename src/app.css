@@ -2,9 +2,14 @@
     margin-left: 5rem;
 }
 
+
+
 .boton-menu {
     color: white!important;
-   
+}
+
+.boton-menu-experiencia {
+    color: black;
 }
 
 /* App.css */

@@ -7,8 +7,28 @@ import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
 
 export const Header = () => {
-  const isMobile = useMediaQuery("(max-width:760px)");
+  const isMobile = useMediaQuery("(max-width:920px)");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  // Logica de margen para el menú y el icono
+  const isLargeMenu = useMediaQuery('(max-width: 999px) and (min-width: 850px)');
+  const isSmallMenu = useMediaQuery('(max-width: 849px) and (min-width: 700px)');
+  const isExtraSmallMenu = useMediaQuery('(max-width: 799px) and (min-width: 550px)');
+  const isExtraExtraSmallMenu = useMediaQuery('(max-width: 549px) and (min-width: 450px)');
+  const isExtraExtraExtraSmallMenu = useMediaQuery('(max-width: 449px) and (min-width: 320px)');
+  let marginLargeValueMenu;
+  if (isLargeMenu) {
+    marginLargeValueMenu = "15%";
+  } else if (isSmallMenu) {
+    marginLargeValueMenu = "18%";
+  } else if (isExtraSmallMenu) {
+    marginLargeValueMenu = "14%";
+  } else if (isExtraExtraSmallMenu) {
+    marginLargeValueMenu = "6%";
+  } else if (isExtraExtraExtraSmallMenu) {
+    marginLargeValueMenu = "0%";
+  }
+
 
   // logica de navegacion
   const navigate = useNavigate();
@@ -71,10 +91,10 @@ export const Header = () => {
                 marginTop: "0.5rem",
               }}
             >
-              <img src="/logo.png" alt="Logo" width="40%" />
+              <Tooltip title="Luca Simonazzi"><img src="/logo.png" alt="Logo" width="40%" /></Tooltip>
               <IconButton
                 sx={{
-                  marginLeft: "1%",
+                  marginLeft: marginLargeValueMenu,
                 }}
               >
                 <CloseIcon
@@ -95,35 +115,27 @@ export const Header = () => {
               <Button
                 variant="text"
                 className="boton-menu"
-                onClick={() => redirect("/app")}
-              >
+                onClick={() => { redirect("/app"); setIsDrawerOpen(false); }}>
                 Inicio
               </Button>
               <Button
                 variant="text"
                 className="boton-menu"
-                onClick={() => redirect("/sobre-mi")}
+                onClick={() => { redirect("/sobre-mi"); setIsDrawerOpen(false); }}
               >
                 Sobre mí
               </Button>
               <Button
                 variant="text"
                 className="boton-menu"
-                onClick={() => redirect("/skills")}
-              >
-                Skills
-              </Button>
-              <Button
-                variant="text"
-                className="boton-menu"
-                onClick={() => redirect("/experiencia")}
+                onClick={() => { redirect("/experiencia"); setIsDrawerOpen(false); }}
               >
                 Experiencia
               </Button>
               <Button
                 variant="text"
                 className="boton-menu"
-                onClick={() => redirect("/contacto")}
+                onClick={() => { redirect("/contacto"); setIsDrawerOpen(false); }}
               >
                 Contacto
               </Button>
@@ -164,13 +176,6 @@ export const Header = () => {
               onClick={() => redirect("/sobre-mi")}
             >
               Sobre mí
-            </Button>
-            <Button
-              variant="text"
-              className="boton-menu"
-              onClick={() => redirect("/skills")}
-            >
-              Skills
             </Button>
             <Button
               variant="text"

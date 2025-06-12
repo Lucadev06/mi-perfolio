@@ -4,7 +4,6 @@ import { Box, TextField, Typography, Button } from "@mui/material";
 import DoneIcon from '@mui/icons-material/Done';
 
 export const Contacto = () => {
-    {/* States */ }
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
@@ -13,7 +12,6 @@ export const Contacto = () => {
 
     {/* Navigate */ }
     const navigate = useNavigate();
-
 
     {/* Post (envio a mail personal) */ }
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -45,7 +43,7 @@ export const Contacto = () => {
         }
         setIsSending(false);
         setTimeout(() => {
-           setIsSent(false);
+            setIsSent(false);
             navigate("/app");
         }, 3000);
     };
@@ -55,8 +53,8 @@ export const Contacto = () => {
 
             <Box
                 sx={{
+                    minHeight: "80vh",
                     backgroundColor: "#f9f9f9",
-                    padding: "3rem 2rem",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -88,6 +86,7 @@ export const Contacto = () => {
                 ) : (
 
                     <>
+
                         <Typography
                             variant="h3"
                             sx={{ fontWeight: "bold", mb: 3, textAlign: "center" }}
@@ -106,7 +105,7 @@ export const Contacto = () => {
                                 display: "flex",
                                 flexDirection: "column",
                                 gap: 2,
-                                width: "100%",
+                                width: "80%",
                                 maxWidth: "500px",
                             }}
 
@@ -151,6 +150,7 @@ export const Contacto = () => {
                                     backgroundColor: "#f9b234",
                                     fontWeight: "bold",
                                     borderRadius: "2rem",
+                                    marginTop: "1rem",
                                     "&:hover": {
                                         backgroundColor: isSending ? "#f9b234" : "#e5a020",
                                     },
@@ -158,14 +158,10 @@ export const Contacto = () => {
                             >
                                 {isSending ? "Enviando..." : "Enviar"}
                             </Button>
-
-
                         </Box>
                     </>
                 )}
             </Box>
-
-
         </>
     );
 };

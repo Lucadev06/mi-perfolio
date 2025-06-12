@@ -13,10 +13,9 @@ export default function Footer() {
         alignItems: "center",
         padding: "1rem",
         gap: "1rem",
-        backgroundColor: "#f5f5f5",
         borderRadius: "1rem",
-        boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.2)", // Sombra sutil para destacar
-        marginTop: "1rem", // Espacio entre el contenido y el footer
+        boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.2)", 
+        marginTop: "1rem", 
       }}
     >
       <Box
@@ -30,7 +29,7 @@ export default function Footer() {
         <Button>
           <Tooltip title="Mi Linkedin">
             <a href="https://www.linkedin.com/in/luca-simonazzi-371a202b4/" target="_blank">
-              <LinkedInIcon />
+              <LinkedInIcon sx={{color: "blue"}}/>
             </a>
           </Tooltip>
         </Button>
