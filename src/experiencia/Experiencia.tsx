@@ -7,8 +7,14 @@ export const Experiencia = () => {
   const isSmallScreen = useMediaQuery('(max-width: 900px)');
   const marginLeftSmartPhone = isSmallScreen ? '18%' : '0%';
 
-  const isExtraSmallScreen = useMediaQuery('(max-width: 700px)');
-  const marginLeftExtraSmartPhone = isExtraSmallScreen ? '30%' : '44%';
+const isMediumScreen = useMediaQuery('(max-width: 800px)');
+const isExtraSmallScreen = useMediaQuery('(max-width: 700px)');
+
+const marginLeftExtraSmartPhone = isExtraSmallScreen
+  ? '26%' // celulares chicos
+  : isMediumScreen
+  ? '38%' // tablets / celulares grandes
+  : '42%'; // desktop
   // Función para scroll suave por ID
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
