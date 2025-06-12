@@ -19,7 +19,7 @@ export const Experiencia = () => {
   return (
     <Box
       sx={{
-        width: '80%',
+        width: '85%',
         maxWidth: '1000px',
         mx: 'auto',
         px: 2,
@@ -68,7 +68,7 @@ export const Experiencia = () => {
 
       <Box id="Empresarial" sx={{ mb: 4 }}>
         <Typography variant="h4" sx={{ mb: 2, fontWeight: 'bold', textAlign: 'left' }}>
-          Experiencia Empresarial
+          Empresarial
         </Typography>
 
         <Box
@@ -185,7 +185,7 @@ export const Experiencia = () => {
 
       <Box id="Freelance" sx={{ mb: 4 }}>
         <Typography variant="h4" sx={{ mb: 2, fontWeight: 'bold', textAlign: 'left' }}>
-          Experiencia Freelance
+          Freelance
         </Typography>
 
         <Box
