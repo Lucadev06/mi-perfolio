@@ -7,14 +7,14 @@ export const Experiencia = () => {
   const isSmallScreen = useMediaQuery('(max-width: 900px)');
   const marginLeftSmartPhone = isSmallScreen ? '18%' : '0%';
 
-const isMediumScreen = useMediaQuery('(max-width: 800px)');
-const isExtraSmallScreen = useMediaQuery('(max-width: 700px)');
+  const isMediumScreen = useMediaQuery('(max-width: 800px)');
+  const isExtraSmallScreen = useMediaQuery('(max-width: 700px)');
 
-const marginLeftExtraSmartPhone = isExtraSmallScreen
-  ? '26%' // celulares chicos
-  : isMediumScreen
-  ? '38%' // tablets / celulares grandes
-  : '42%'; // desktop
+  const marginLeftExtraSmartPhone = isExtraSmallScreen
+    ? '26%' // celulares chicos
+    : isMediumScreen
+      ? '38%' // tablets / celulares grandes
+      : '42%'; // desktop
   // Función para scroll suave por ID
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -92,8 +92,9 @@ const marginLeftExtraSmartPhone = isExtraSmallScreen
         >
           <Typography variant="h5">IT Patagonia (Septiembre 2024 - Actualidad)</Typography>
           <Typography variant="body1">
-            Formo parte del equipo de desarrollo frontend en el proyecto <strong>"CV Prestadores OSDE"</strong>, trabajando desde la consultora <strong>IT Patagonia</strong>. Actualmente me desempeño como único desarrollador frontend, impulsando la evolución del producto junto al equipo de backend y UX, y participando activamente en las decisiones técnicas y de diseño.
+            Formo parte del equipo de desarrollo frontend en el proyecto <strong>"CV Prestadores OSDE"</strong>, trabajando desde la consultora <strong>IT Patagonia</strong>. Actualmente me desempeño como único desarrollador frontend, impulsando la evolución del producto junto al equipo de backend y UX, participando activamente en las decisiones técnicas y de diseño, y colaborando en la detección y resolución de bugs para afinar el proyecto en su etapa final.
           </Typography>
+
 
           {/* Galería PC + Mobile */}
           <Box
