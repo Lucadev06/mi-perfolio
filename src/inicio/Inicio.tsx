@@ -156,7 +156,7 @@ export const Inicio = () => {
                 </Typography>
 
                 <Typography sx={{ color: "#444", mb: 3, fontSize: "1.2rem" }}>
-                    Desarrollador Frontend enfocado en crear experiencias modernas y funcionales. Me especializo en React, MUI y el diseño limpio con impacto visual.
+                    Desarrollador Frontend enfocado en crear experiencias modernas y funcionales. Me especializo en React y el diseño limpio con impacto visual.
                 </Typography>
 
                 <Box
