@@ -22,6 +22,8 @@ export const Experiencia = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  //el html deberia estar en un componete aparte
   return (
     <Box
       sx={{

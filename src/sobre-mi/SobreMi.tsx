@@ -21,6 +21,7 @@ export const SobreMi = () => {
           Quién soy
         </Typography>
 
+          {/* esto podria ser una constante*/}
         <Typography variant="body1" sx={{ fontSize: '1.2rem', lineHeight: 1.6 }}>
           Soy Luca Simonazzi, programador frontend y estudiante de Licenciatura en Sistemas.
           Disfruto transformar ideas en experiencias web atractivas y funcionales, siempre
@@ -36,6 +37,7 @@ export const SobreMi = () => {
           Skills
         </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+          {/*esto deberia estar en una constate*/}
           {[
             'HTML',
             'CSS',
@@ -60,7 +62,7 @@ export const SobreMi = () => {
         <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 2 }}>
           Hobbies
         </Typography>
-
+{/*esto deberia estar en una constate*/}
         <Typography>
           Fuera del código, soy bastante fanático del gimnasio, el fútbol y la UFC. También disfruto de un buen mate, que nunca falta mientras programo o aprendo algo nuevo. Me gusta mantener el equilibrio entre entrenar y seguir mis pasiones.
         </Typography>

@@ -7,7 +7,7 @@ export const Inicio = () => {
     const redirectToContact = () => {
         navigate("/contacto");
     };
-   
+   // sacar a una clase de css
     return (
         <Box
             sx={{

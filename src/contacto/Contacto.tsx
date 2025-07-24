@@ -23,7 +23,7 @@ export const Contacto = () => {
             email: email,
             message: message,
         };
-
+// esto podria esatr en un hook y llamarlo aca en una funcion
         const response = await fetch("https://formspree.io/f/manozrnr", {
             method: "POST",
             headers: {
@@ -49,6 +49,9 @@ export const Contacto = () => {
     };
 
     return (
+        /* esto deberia estar separado en componentes*
+        ej isSent ? cop1: comp2
+        */
         <>
 
             <Box

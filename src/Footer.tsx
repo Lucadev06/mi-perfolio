@@ -56,7 +56,7 @@ export default function Footer() {
             </Tooltip>
         </Button>
       </Box>
-
+          {/*2025 deberia ser uanvariable q cambi con el año */}
       <Typography variant="body1" sx={{ color: "#333" }}>
         2025 © Luca Simonazzi
       </Typography>
