@@ -1,4 +1,4 @@
-import { Header } from "./Header";
+import { Header } from "./header/Header";
 import { Box } from '@mui/material';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Inicio } from "./inicio/Inicio";

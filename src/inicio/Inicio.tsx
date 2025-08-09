@@ -7,7 +7,7 @@ export const Inicio = () => {
     const redirectToContact = () => {
         navigate("/contacto");
     };
-   
+
     return (
         <Box
             sx={{
