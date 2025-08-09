@@ -1,5 +1,6 @@
 import { Box, Typography, Divider } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
+import { QUIEN_SOY_TEXT, SKILLS, HOBBIES_TEXT } from '../sobre-mi/constants/sobreMi';
 
 export const SobreMi = () => {
   return (
@@ -20,12 +21,8 @@ export const SobreMi = () => {
         <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 2 }}>
           Quién soy
         </Typography>
-
-          {/* esto podria ser una constante*/}
         <Typography variant="body1" sx={{ fontSize: '1.2rem', lineHeight: 1.6 }}>
-          Soy Luca Simonazzi, programador frontend y estudiante de Licenciatura en Sistemas.
-          Disfruto transformar ideas en experiencias web atractivas y funcionales, siempre
-          buscando aprender y mejorar.
+          {QUIEN_SOY_TEXT}
         </Typography>
       </Box>
 
@@ -37,16 +34,7 @@ export const SobreMi = () => {
           Skills
         </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          {/*esto deberia estar en una constate*/}
-          {[
-            'HTML',
-            'CSS',
-            'TypeScript',
-            'Python',
-            'React',
-            'Next.js',
-            'Material UI',
-          ].map((skill, index) => (
+          {SKILLS.map((skill, index) => (
             <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
               <CheckIcon sx={{ color: 'orange' }} />
               <Typography>{skill}</Typography>
@@ -62,10 +50,7 @@ export const SobreMi = () => {
         <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 2 }}>
           Hobbies
         </Typography>
-{/*esto deberia estar en una constate*/}
-        <Typography>
-          Fuera del código, soy bastante fanático del gimnasio, el fútbol y la UFC. También disfruto de un buen mate, que nunca falta mientras programo o aprendo algo nuevo. Me gusta mantener el equilibrio entre entrenar y seguir mis pasiones.
-        </Typography>
+        <Typography>{HOBBIES_TEXT}</Typography>
       </Box>
     </Box>
   );
