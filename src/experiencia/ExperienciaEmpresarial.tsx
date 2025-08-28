@@ -1,18 +1,13 @@
-import { Box, Typography, Tooltip, useMediaQuery } from '@mui/material';
+import { Box, Typography, Tooltip, useMediaQuery, useTheme } from '@mui/material';
 import { SiNextdotjs, SiTypescript, SiMui } from 'react-icons/si';
 import { EXPERIENCIA_EMPRESARIAL } from './constants/experiencia';
 
 export const ExperienciaEmpresarial = () => {
-    const isSmallScreen = useMediaQuery('(max-width: 900px)');
-    const marginLeftSmartPhone = isSmallScreen ? '18%' : '0%';
-    const isMediumScreen = useMediaQuery('(max-width: 800px)');
-    const isExtraSmallScreen = useMediaQuery('(max-width: 700px)');
+    const theme = useTheme();
+    const isDesktop = useMediaQuery(theme.breakpoints.up('md')); 
 
-    const marginLeftExtraSmartPhone = isExtraSmallScreen
-        ? '26%'
-        : isMediumScreen
-            ? '38%'
-            : '42%';
+    // Ancho compartido para galería e íconos 
+    const mediaWidth = isDesktop ? '100%' : '60%';
 
     return (
         <Box id="Empresarial" sx={{ mb: 4 }}>
@@ -27,89 +22,73 @@ export const ExperienciaEmpresarial = () => {
                     justifyContent: 'center',
                     alignItems: 'flex-start',
                     gap: 2,
-                    marginTop: '2rem',
+                    mt: '2rem',
                     border: '2px solid orangered',
                     borderRadius: '2rem',
-                    padding: '1.5rem',
+                    p: '1.5rem',
                 }}
             >
                 <Typography variant="h5">IT Patagonia (Septiembre 2024 - Actualidad)</Typography>
-                <Typography variant="body1">
-                    {EXPERIENCIA_EMPRESARIAL}
-                </Typography>
 
-                {/* Galería */}
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: { xs: 'column', md: 'row' },
-                        justifyContent: 'center',
-                        alignItems: 'flex-start',
-                        gap: 3,
-                        mt: 2,
-                        width: '100%',
-                    }}
-                >
+                <Typography
+                    variant="body1"
+                    dangerouslySetInnerHTML={{ __html: EXPERIENCIA_EMPRESARIAL }}
+                />
+
+                {/* Galería: SOLO una imagen según breakpoint */}
+                <Box sx={{ mt: 2, width: '100%', display: 'flex', justifyContent: 'center' }}>
                     <Box
                         sx={{
-                            display: { xs: 'none', md: 'block' },
-                            borderRadius: '10px',
+                            width: mediaWidth,
+                            height: isDesktop ? '30rem' : 'auto',
+                            borderRadius: isDesktop ? '10px' : '2rem',
                             overflow: 'hidden',
                             border: '4px solid #ccc',
                             boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                            width: '60%',
-                            height: '30rem',
+                            mx: 'auto',
                         }}
                     >
                         <Tooltip title="Clickeá para ver el proyecto" arrow>
-                            <a href="https://cvprest.osde.com.ar/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                                <img
-                                    src="/osde-desktop.png"
-                                    alt="CV Prestadores OSDE - versión escritorio"
-                                    style={{
-                                        width: '180%',
-                                        height: '100%',
-                                        objectFit: 'cover',
-                                        display: 'block',
-                                    }}
-                                />
-                            </a>
-                        </Tooltip>
-                    </Box>
-
-                    <Box
-                        sx={{
-                            borderRadius: '2rem',
-                            overflow: 'hidden',
-                            border: '4px solid #ccc',
-                            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                            width: { xs: '60%', md: '30%' },
-                            marginLeft: marginLeftSmartPhone,
-                        }}
-                    >
-                        <Tooltip title="Clickeá para ver el proyecto" arrow>
-                            <a href="https://cvprest.osde.com.ar/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                                <img
-                                    src="/osde-mobile.jpeg"
-                                    alt="CV Prestadores OSDE - versión móvil"
-                                    style={{
-                                        width: '100%',
-                                        display: 'block',
-                                    }}
-                                />
+                            <a
+                                href="https://cvprest.osde.com.ar/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: 'none' }}
+                            >
+                                {isDesktop ? (
+                                    <img
+                                        src="/osde-desktop.png"
+                                        alt="CV Prestadores OSDE - versión escritorio"
+                                        style={{
+                                            width: '120%',
+                                            height: '100%',
+                                            objectFit: 'cover',
+                                            objectPosition: 'top center',
+                                            display: 'block',
+                                        }}
+                                    />
+                                ) : (
+                                    <img
+                                        src="/osde-mobile.jpeg"
+                                        alt="CV Prestadores OSDE - versión móvil"
+                                        style={{ width: '100%', display: 'block' }}
+                                    />
+                                )}
                             </a>
                         </Tooltip>
                     </Box>
                 </Box>
 
-                {/* Tecnologías */}
+                {/* Tecnologías (mismo ancho que la galería) */}
                 <Box
                     sx={{
+                        width: mediaWidth,
+                        mx: 'auto',
                         display: 'flex',
                         justifyContent: 'center',
-                        marginTop: '2rem',
-                        marginLeft: marginLeftExtraSmartPhone,
+                        alignItems: 'center',
                         gap: 3,
+                        mt: '2rem',
                     }}
                 >
                     <Tooltip title="Next.js" arrow>
@@ -117,13 +96,11 @@ export const ExperienciaEmpresarial = () => {
                             <SiNextdotjs size={40} color="black" />
                         </Box>
                     </Tooltip>
-
                     <Tooltip title="TypeScript" arrow>
                         <Box component="span">
                             <SiTypescript size={40} color="#3178C6" />
                         </Box>
                     </Tooltip>
-
                     <Tooltip title="Material UI" arrow>
                         <Box component="span">
                             <SiMui size={40} color="#0081CB" />

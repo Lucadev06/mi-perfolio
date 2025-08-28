@@ -1,19 +1,13 @@
-import { Box, Typography, Tooltip, useMediaQuery } from '@mui/material';
+import { Box, Typography, Tooltip, useMediaQuery, useTheme } from '@mui/material';
 import { SiNextdotjs, SiTypescript, SiMui } from 'react-icons/si';
 import { EXPERIENCIA_FREELANCE } from './constants/experiencia';
 
 export const ExperienciaFreelance = () => {
-    const isSmallScreen = useMediaQuery('(max-width: 900px)');
-    const marginLeftSmartPhone = isSmallScreen ? '18%' : '0%';
+    const theme = useTheme();
+    const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
-    const isMediumScreen = useMediaQuery('(max-width: 800px)');
-    const isExtraSmallScreen = useMediaQuery('(max-width: 700px)');
-
-    const marginLeftExtraSmartPhone = isExtraSmallScreen
-        ? '26%' // celulares chicos
-        : isMediumScreen
-            ? '38%' // tablets / celulares grandes
-            : '42%'; // desktop
+    // Ancho compartido para galería e íconos (igual que en Empresarial)
+    const mediaWidth = isDesktop ? '100%' : '60%';
 
     return (
         <Box id="Freelance" sx={{ mb: 4 }}>
@@ -28,38 +22,30 @@ export const ExperienciaFreelance = () => {
                     justifyContent: 'center',
                     alignItems: 'flex-start',
                     gap: 2,
-                    marginTop: '2rem',
+                    mt: '2rem',
                     border: '2px solid orangered',
                     borderRadius: '2rem',
-                    padding: '1.5rem',
+                    p: '1.5rem',
                 }}
             >
                 <Typography variant="h5">Hasser Motor Works (Febrero 2025)</Typography>
-                <Typography variant="body1">
-                    {EXPERIENCIA_FREELANCE}
-                </Typography>
 
-                {/* Galería PC + Mobile */}
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: { xs: 'column', md: 'row' },
-                        justifyContent: 'center',
-                        alignItems: 'flex-start',
-                        gap: 3,
-                        mt: 2,
-                        width: '100%',
-                    }}
-                >
+                <Typography
+                    variant="body1"
+                    dangerouslySetInnerHTML={{ __html: EXPERIENCIA_FREELANCE }}
+                />
+
+                {/* Galería: SOLO una imagen según breakpoint */}
+                <Box sx={{ mt: 2, width: '100%', display: 'flex', justifyContent: 'center' }}>
                     <Box
                         sx={{
-                            display: { xs: 'none', md: 'block' },
-                            borderRadius: '10px',
+                            width: mediaWidth,
+                            height: isDesktop ? '30rem' : 'auto',
+                            borderRadius: isDesktop ? '10px' : '2rem',
                             overflow: 'hidden',
                             border: '4px solid #ccc',
                             boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                            width: '60%',
-                            height: '30rem',
+                            mx: 'auto',
                         }}
                     >
                         <Tooltip title="Clickeá para ver el proyecto" arrow>
@@ -69,58 +55,40 @@ export const ExperienciaFreelance = () => {
                                 rel="noopener noreferrer"
                                 style={{ textDecoration: 'none' }}
                             >
-                                <img
-                                    src="/hasser-desktop.png"
-                                    alt="Hasser Motor Works - versión escritorio"
-                                    style={{
-                                        width: '170%',
-                                        height: '100%',
-                                        objectFit: 'cover',
-                                        display: 'block',
-                                    }}
-                                />
-                            </a>
-                        </Tooltip>
-                    </Box>
-
-                    <Box
-                        sx={{
-                            borderRadius: '2rem',
-                            overflow: 'hidden',
-                            border: '4px solid #ccc',
-                            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                            width: { xs: '60%', md: '30%' },
-                            marginLeft: marginLeftSmartPhone,
-                        }}
-                    >
-                        <Tooltip title="Clickeá para ver el proyecto" arrow>
-                            <a
-                                href="https://hassermotorworks.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: 'none' }}
-                            >
-                                <img
-                                    src="/hasser-mobile.jpeg"
-                                    alt="Hasser Motor Works - versión móvil"
-                                    style={{
-                                        width: '100%',
-                                        display: 'block',
-                                    }}
-                                />
+                                {isDesktop ? (
+                                    <img
+                                        src="/hasser-desktop.png"
+                                        alt="Hasser Motor Works - versión escritorio"
+                                        style={{
+                                            width: '110%',
+                                            height: '100%',
+                                            objectFit: 'cover',
+                                            objectPosition: 'top center',
+                                            display: 'block',
+                                        }}
+                                    />
+                                ) : (
+                                    <img
+                                        src="/hasser-mobile.jpeg"
+                                        alt="Hasser Motor Works - versión móvil"
+                                        style={{ width: '100%', display: 'block' }}
+                                    />
+                                )}
                             </a>
                         </Tooltip>
                     </Box>
                 </Box>
 
-                {/* Tecnologías */}
+                {/* Tecnologías (mismo ancho que la galería) */}
                 <Box
                     sx={{
+                        width: mediaWidth,
+                        mx: 'auto',
                         display: 'flex',
                         justifyContent: 'center',
-                        marginTop: '2rem',
-                        marginLeft: marginLeftExtraSmartPhone,
+                        alignItems: 'center',
                         gap: 3,
+                        mt: '2rem',
                     }}
                 >
                     <Tooltip title="Next.js" arrow>
@@ -128,13 +96,11 @@ export const ExperienciaFreelance = () => {
                             <SiNextdotjs size={40} color="black" />
                         </Box>
                     </Tooltip>
-
                     <Tooltip title="TypeScript" arrow>
                         <Box component="span">
                             <SiTypescript size={40} color="#3178C6" />
                         </Box>
                     </Tooltip>
-
                     <Tooltip title="Material UI" arrow>
                         <Box component="span">
                             <SiMui size={40} color="#0081CB" />
