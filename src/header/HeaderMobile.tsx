@@ -33,6 +33,7 @@ export const HeaderMobile = () => {
         navigate(ruta);
     };
 
+
     return (
         <>
             <Box
@@ -42,9 +43,9 @@ export const HeaderMobile = () => {
                     justifyContent: "space-between",
                     alignItems: "center",
                     padding: "0",
-                    marginBottom: "-10px",
                     boxSizing: "border-box",
                     backgroundColor: "black",
+                    height: "4rem",
                 }}
             >
                 <Box sx={{ display: "flex", alignItems: "center" }}>

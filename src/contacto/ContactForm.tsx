@@ -17,7 +17,7 @@ const ContactForm = ({
     onSubmit,
 }: Props) => (
     <>
-        <Typography variant="h3" sx={{ fontWeight: "bold", mb: 3, textAlign: "center" }}>
+        <Typography variant="h3" sx={{ fontWeight: "bold", mb: 3, textAlign: "center", marginTop: "1rem" }}>
             Contactame
         </Typography>
 

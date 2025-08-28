@@ -1,10 +1,10 @@
 import { Box, Typography, Tooltip, useMediaQuery } from '@mui/material';
 import { SiNextdotjs, SiTypescript, SiMui } from 'react-icons/si';
+import { EXPERIENCIA_EMPRESARIAL } from './constants/experiencia';
 
 export const ExperienciaEmpresarial = () => {
     const isSmallScreen = useMediaQuery('(max-width: 900px)');
     const marginLeftSmartPhone = isSmallScreen ? '18%' : '0%';
-
     const isMediumScreen = useMediaQuery('(max-width: 800px)');
     const isExtraSmallScreen = useMediaQuery('(max-width: 700px)');
 
@@ -35,11 +35,7 @@ export const ExperienciaEmpresarial = () => {
             >
                 <Typography variant="h5">IT Patagonia (Septiembre 2024 - Actualidad)</Typography>
                 <Typography variant="body1">
-                    Formo parte del equipo de desarrollo frontend en el proyecto <strong>"CV Prestadores OSDE"</strong>,
-                    trabajando desde la consultora <strong>IT Patagonia</strong>. Actualmente me desempeño como único
-                    desarrollador frontend, impulsando la evolución del producto junto al equipo de backend y UX, participando
-                    activamente en las decisiones técnicas y de diseño, y colaborando en la detección y resolución de bugs para
-                    afinar el proyecto en su etapa final.
+                    {EXPERIENCIA_EMPRESARIAL}
                 </Typography>
 
                 {/* Galería */}

@@ -3,6 +3,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import { QUIEN_SOY_TEXT, SKILLS, HOBBIES_TEXT } from '../sobre-mi/constants/sobreMi';
 
 export const SobreMi = () => {
+  
   return (
     <Box
       sx={{
@@ -14,6 +15,7 @@ export const SobreMi = () => {
         display: 'flex',
         flexDirection: 'column',
         gap: 6,
+       
       }}
     >
       {/* Quién soy */}

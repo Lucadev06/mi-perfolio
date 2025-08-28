@@ -1,5 +1,6 @@
 import { Box, Typography, Tooltip, useMediaQuery } from '@mui/material';
 import { SiNextdotjs, SiTypescript, SiMui } from 'react-icons/si';
+import { EXPERIENCIA_FREELANCE } from './constants/experiencia';
 
 export const ExperienciaFreelance = () => {
     const isSmallScreen = useMediaQuery('(max-width: 900px)');
@@ -35,11 +36,7 @@ export const ExperienciaFreelance = () => {
             >
                 <Typography variant="h5">Hasser Motor Works (Febrero 2025)</Typography>
                 <Typography variant="body1">
-                    Desarrollo freelance del sitio web oficial de <strong>"Hasser Motor Works"</strong>, un emprendimiento
-                    dedicado a la restauración y personalización de automóviles. Realicé el diseño e implementación completa del
-                    frontend, trabajando en estrecha colaboración con el cliente para definir la estructura, el estilo visual y la
-                    experiencia de usuario. El proyecto fue desarrollado con <strong>Next.js</strong>, <strong>TypeScript</strong> y
-                    <strong> Material UI</strong>, con foco en la performance, el diseño responsivo y la optimización SEO.
+                    {EXPERIENCIA_FREELANCE}
                 </Typography>
 
                 {/* Galería PC + Mobile */}
